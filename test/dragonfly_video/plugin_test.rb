@@ -17,4 +17,10 @@ describe DragonflyVideo::Plugin do
       end
     end
   end
+
+  describe 'processors' do
+    it 'adds #screenshot' do
+      video.must_respond_to :screenshot
+    end
+  end
 end

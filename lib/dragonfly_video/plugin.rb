@@ -1,4 +1,5 @@
 require 'dragonfly_video/analysers/video_properties'
+require 'dragonfly_video/processors/screenshot'
 
 class DragonflyVideo::Plugin
   def call(app, _opts = {})
@@ -11,6 +12,8 @@ class DragonflyVideo::Plugin
         content.analyse(:video_properties)[analyser]
       end
     end
+
+    app.add_processor :screenshot, DragonflyVideo::Processors::Screenshot.new
   end
 end
 
