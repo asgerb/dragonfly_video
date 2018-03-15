@@ -5,11 +5,13 @@ require 'streamio-ffmpeg'
 module DragonflyVideo
   module Processors
     class Screenshot
+      FFMPEG_COMMAND = 'ffmpeg'.freeze
+
       def call(content, options = {})
         format = options.delete(:format) { :jpg }
 
         content.shell_update(ext: format) do |old_path, new_path|
-          "#{FFPMPEG_COMMAND} -y -i #{old_path} -vframes 1 #{new_path}"
+          "#{FFMPEG_COMMAND} -y -i #{old_path} -vframes 1 #{new_path}"
         end
 
         content.ext = format
@@ -20,9 +22,6 @@ module DragonflyVideo
         format = options.fetch(:format, :jpg)
         attrs.ext = format.to_s
       end
-
-      private
-      FFPMPEG_COMMAND = 'ffmpeg'.freeze
     end
   end
 end
