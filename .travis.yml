@@ -4,8 +4,7 @@ script: 'bundle exec rake'
 rvm:
   - 2.3.1
 before_install:
-  - sudo apt-get update
-  - sudo apt-get install ffmpeg
+  - wget http://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz -O - | sudo tar -xJ --strip-components=1 -C /usr/local/bin/
 
 notifications:
   email:
