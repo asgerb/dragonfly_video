@@ -1,8 +1,6 @@
-# DragonflyVideo
+# Dragonfly Video
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/dragonfly_video`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Wraps common video-related tasks into [Dragonfly](http://markevans.github.io/dragonfly) analysers and processors.
 
 ## Installation
 
@@ -20,17 +18,63 @@ Or install it yourself as:
 
     $ gem install dragonfly_video
 
+## Dependencies
+
+The gem relies on `ffmpeg` (and ruby implementation [streamio-ffmpeg](https://github.com/streamio/streamio-ffmpeg)) for reading metadata and generating screenshots of video files.
+
+On a Mac you can install ffmpeg with homebrew: `brew install ffmpeg`.
+
 ## Usage
 
-TODO: Write usage instructions here
+Add the `:video` plugin to your Dragonfly config block:
 
-## Development
+```ruby
+Dragonfly.app.configure do
+  plugin :video
+end
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+## Analysers
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+### `video_properties`
+
+Reads properties of a video file:
+
+```ruby
+video.video_properties
+
+# => {
+#   duration: 7.5,
+#   bitrate: 481,
+#   size: 455546,
+#   video_stream: "h264, yuv420p, 640x480 [PAR 1:1 DAR 4:3], 371 kb/s, 16.75 fps, 15 tbr, 600 tbn, 1200 tbc",
+#   video_codec: "h264",
+#   colorspace: "yuv420p",
+#   resolution: "640x480",
+#   width: 640,
+#   height: 480,
+#   frame_rate: 16.72,
+#   audio_stream: "aac, 44100 Hz, stereo, s16, 75 kb/s",
+#   audio_codec: "aac",
+#   audio_sample_rate: 44100,
+#   audio_channels: 2
+# }
+```
+
+## Processors
+
+### `screenshot`
+
+Generates a screenshot of the video's first frame:
+
+```ruby
+video.screenshot
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/dragonfly_video.
-
+1. Fork it ( https://github.com/asgerb/dragonfly_video/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
