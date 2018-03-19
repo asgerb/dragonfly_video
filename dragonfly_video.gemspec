@@ -11,6 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'Wraps common video-related tasks into Dragonfly analysers and processors.'
   spec.homepage      = 'https://github.com/asgerb/dragonfly_video'
+  spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
