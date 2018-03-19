@@ -1,5 +1,8 @@
 # Dragonfly Video
 
+[![Build Status](https://travis-ci.org/asgerb/dragonfly_video.svg)](https://travis-ci.org/asgerb/dragonfly_video) [![Gem Version](https://badge.fury.io/rb/dragonfly_audio.svg)](http://badge.fury.io/rb/dragonfly_audio) [![Maintainability](https://api.codeclimate.com/v1/badges/9c7b310e04bc03fae27f/maintainability)](https://codeclimate.com/github/asgerb/dragonfly_video/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/9c7b310e04bc03fae27f/test_coverage)](https://codeclimate.com/github/asgerb/dragonfly_video/test_coverage)
+
 Wraps common video-related tasks into [Dragonfly](http://markevans.github.io/dragonfly) analysers and processors.
 
 ## Installation
