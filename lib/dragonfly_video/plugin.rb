@@ -1,5 +1,6 @@
-require 'dragonfly_video/analysers/video_properties'
-require 'dragonfly_video/processors/screenshot'
+require "dragonfly_video/analysers/video_properties"
+require "dragonfly_video/processors/screenshot"
+require "dragonfly_video/processors/remove_audio"
 
 class DragonflyVideo::Plugin
   def call(app, _opts = {})
@@ -14,6 +15,7 @@ class DragonflyVideo::Plugin
     end
 
     app.add_processor :screenshot, DragonflyVideo::Processors::Screenshot.new
+    app.add_processor :remove_audio, DragonflyVideo::Processors::RemoveAudio.new
   end
 end
 
