@@ -8,8 +8,10 @@ describe DragonflyVideo::Processors::RemoveAudio do
 
   it "removes the audio from the video" do
     processor.call(video)
+    movie = FFMPEG::Movie.new(video.path)
 
-    _(FFMPEG::Movie.new(video.path).audio_stream).must_equal nil
+    _(movie.audio_stream).must_equal nil
+    _(movie).must_be :valid?
   end
 
   it 'does not change the video extension' do

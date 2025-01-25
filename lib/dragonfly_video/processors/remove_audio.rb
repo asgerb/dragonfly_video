@@ -7,7 +7,7 @@ module DragonflyVideo
     class RemoveAudio < BaseProcessor
       def call(content, options = {})
         content.shell_update do |old_path, new_path|
-          "#{FFMPEG_COMMAND} -i #{old_path} -c copy -an #{new_path}"
+          "#{FFMPEG_COMMAND} -i #{old_path} -c copy -an -y #{new_path}"
         end
       end
     end
