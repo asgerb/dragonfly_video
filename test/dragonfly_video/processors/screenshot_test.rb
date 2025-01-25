@@ -7,11 +7,11 @@ describe DragonflyVideo::Processors::Screenshot do
 
   describe 'result' do
     it 'makes a screenshot from the video' do
-      image = processor.call(video)
+      processor.call(video)
 
-      _(image.ext).must_equal 'jpg'
-      _(image.mime_type).must_equal 'image/jpeg'
-      _(image.data[0,3].bytes).must_equal [255, 216, 255]
+      _(video.ext).must_equal 'jpg'
+      _(video.mime_type).must_equal 'image/jpeg'
+      _(video.data[0,3].bytes).must_equal [255, 216, 255]
     end
   end
 
