@@ -1,6 +1,4 @@
-require 'streamio-ffmpeg'
-
-# IMPORTANT: See https://github.com/streamio/streamio-ffmpeg
+require "streamio-ffmpeg"
 
 module DragonflyVideo
   module Analysers
@@ -10,12 +8,6 @@ module DragonflyVideo
                        audio_sample_rate audio_channels).freeze
 
       def call(content)
-        ffmpeg(content)
-      end
-
-      private
-
-      def ffmpeg(content)
         res = {}
         movie = FFMPEG::Movie.new(content.path)
         if movie.valid?
