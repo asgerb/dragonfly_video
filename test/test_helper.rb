@@ -1,17 +1,16 @@
-require 'bundler/setup'
+require "bundler/setup"
 
-require 'minitest'
-require 'minitest/autorun'
-require 'minitest/spec'
+require "minitest"
+require "minitest/autorun"
+require "minitest/spec"
 
-require 'dragonfly'
-require 'dragonfly_video'
+require "dragonfly_video"
 
-SAMPLES_DIR = Pathname.new(File.expand_path('../../samples', __FILE__))
+SAMPLES_DIR = Pathname.new(File.expand_path("../../samples", __FILE__))
 
 def test_app(name = nil)
   app = Dragonfly::App.instance(name)
   app.datastore = Dragonfly::MemoryDataStore.new
-  app.secret = 'test secret'
+  app.secret = "test secret"
   app
 end
