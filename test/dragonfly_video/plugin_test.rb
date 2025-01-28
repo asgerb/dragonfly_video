@@ -23,4 +23,14 @@ describe DragonflyVideo::Plugin do
     _(mp4).must_respond_to :screenshot
     _(mov).must_respond_to :screenshot
   end
+
+  it 'adds #remove_audio' do
+    _(mp4).must_respond_to :remove_audio
+    _(mov).must_respond_to :remove_audio
+  end
+
+  it 'adds #optimize' do
+    _(mp4).must_respond_to :optimize
+    _(mov).must_respond_to :optimize
+  end
 end
