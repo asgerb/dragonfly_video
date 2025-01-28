@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## Next
+## 0.3.2
 
 * Added `Optimize` processor
 
