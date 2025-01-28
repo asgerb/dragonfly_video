@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Next
+
+* Added `Optimize` processor
+
 ## 0.3.1
 
 * Fixed `RemoveAudio` processor returning unreadable video
