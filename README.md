@@ -74,6 +74,22 @@ Generates a screenshot of the video's first frame:
 video.screenshot
 ```
 
+### `remove_audio`
+
+Removes audio from the video:
+
+```ruby
+video.remove_audio
+```
+
+### `optimize`
+
+Optimizes the video based on predefined profiles: `:streaming`, `:archive`, `:mobile` or `:default`
+
+```ruby
+video.optimize
+```
+
 ## Contributing
 
 1. Fork it ( https://github.com/asgerb/dragonfly_video/fork )
