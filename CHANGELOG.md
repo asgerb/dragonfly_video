@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.4.0
+
+* Added profile option to `Optimize` processor
+
 ## 0.3.2
 
 * Added `Optimize` processor
