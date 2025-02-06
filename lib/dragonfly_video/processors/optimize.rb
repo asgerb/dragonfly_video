@@ -43,7 +43,7 @@ module DragonflyVideo
         gop_option = gop ? "-g #{gop}" : ""
 
         content.shell_update do |old_path, new_path|
-          "#{FFMPEG_COMMAND} -y -i #{old_path} #{gop_option} -map_metadata -1 -c:a libfdk_aac -c:v libx264 -crf #{crf} -preset #{preset} -profile:v #{profile_v} -pix_fmt yuv420p -movflags +faststart -vf 'scale=trunc(iw/2)*2:trunc(ih/2)*2' #{maxrate_option} #{new_path}"
+          "#{FFMPEG_COMMAND} -y -i #{old_path} #{gop_option} -map_metadata -1 -c:a aac -c:v libx264 -crf #{crf} -preset #{preset} -profile:v #{profile_v} -pix_fmt yuv420p -movflags +faststart -vf 'scale=trunc(iw/2)*2:trunc(ih/2)*2' #{maxrate_option} #{new_path}"
         end
       end
     end
